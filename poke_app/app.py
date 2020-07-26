@@ -52,15 +52,7 @@ def compare():
         (slope, intercept, r_value, p_value, std_err) = st.linregress(x_values, y_values)
         x_value = np.asarray(x_values, dtype=np.float64)
         regress_values = x_value * slope + intercept
-
-            # # Plots scatter plot and regresion
-
-            # plt.plot(x_value,regress_values,"r-")
-            
-            # # Annotates graph with equation
-            # line_eq = "y = " + str(round(slope,2)) + "x + " + str(round(intercept,2))
-            # plt.annotate(line_eq,xy=(min(x_values),min(y_values)),fontsize=15,color="red")
-            
+          
         print(f'The r-squared is: {r_value}')
 
         # Plots scatter plot and regresion

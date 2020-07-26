@@ -28,7 +28,6 @@ scikit-learn
 joblib
 matplotlib
 pandas
-base64
 scipy
 random
 io
