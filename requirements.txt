@@ -26,5 +26,9 @@ Werkzeug
 gunicorn
 scikit-learn
 joblib
-Matplotlib
-
+matplotlib
+pandas
+base64
+scipy
+random
+io
