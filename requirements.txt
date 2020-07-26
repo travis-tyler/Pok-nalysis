@@ -29,5 +29,3 @@ joblib
 matplotlib
 pandas
 scipy
-random
-io
