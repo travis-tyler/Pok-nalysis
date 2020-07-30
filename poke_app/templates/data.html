@@ -140,18 +140,81 @@
 
   <!-- Content Section -->
 
-    <div class='row'> 
-      <div class= "col-4"></div>
-      <h3 class="col-4">Welcome to your pokedex!</h3>
+  <div class="container">
+    <div class="row margin-top-50">
+      <div class="col-md-2">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading">Filter Search</div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="date">Enter a Pokedex No.</label>
+                      <input class="form-control no-field" id="datetime" type="text" placeholder="1">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="date">Enter a name</label>
+                      <input class="form-control name-field" id="text" type="text" placeholder="Bulbasaur">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="date">Enter a generation</label>
+                      <input class="form-control gen-field" id="text" type="text" placeholder="1">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="date">Enter a primary type</label>
+                      <input class="form-control type1-field" id="text" type="text" placeholder="Grass">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="date">Enter a secondary type</label>
+                      <input class="form-control type2-field" id="text" type="text" placeholder="Poison">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="date">Enter an ability</label>
+                      <input class="form-control ability-field" id="text" type="text" placeholder="Overgrow">
+                    </li>
+                  </ul>
+                </div>
+                <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-10">
+        <div id="table-area" class="">
+          <table id="ufo-table" class="table table-striped">
+            <thead>
+              <tr>
+                <th class="table-head">No.</th>
+                <th class="table-head">Name</th>
+                <th class="table-head">Gen.</th>
+                <th class="table-head">Primary type</th>
+                <th class="table-head">Secondary type</th>
+                <th class="table-head">Height (m)</th>
+                <th class="table-head">Weight (kg)</th>
+                <th class="table-head">Ability 1</th>
+                <th class="table-head">Ability 2</th>
+                <th class="table-head">Hidden ability</th>
+                <th class="table-head">Total points</th>
+                <th class="table-head">HP</th>
+                <th class="table-head">Attack</th>
+                <th class="table-head">Defense</th>
+                <th class="table-head">Special attack</th>
+                <th class="table-head">Special defense</th>
+                <th class="table-head">Speed</th>
+                <th class="table-head">Catch rate</th>
+                <th class="table-head">Base friendship</th>
+                <th class="table-head">Base XP</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <br>
-    <div class='row'> 
-      <div class= "col-4"></div>
-      <p class="col-4">
-        Some text here....
-      </p>
-    </div>
-    <br>
+  </div>
 
 
   
@@ -168,7 +231,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <!-- <script src="./static/app.js"></script> -->
+  <script src="../static/app.js"></script>
 
 </body>
 </html>

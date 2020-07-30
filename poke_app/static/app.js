@@ -1,88 +1,127 @@
-d3.csv("../Resources/pokedex_(Update.04.20).csv").then(function(data) {
-    console.log(data[0]);
+// Load data from hours-of-tv-watched.csv
+(async function(){
+  var pokeData = await d3.csv("../../Resources/pokedex_(Update.04.20).csv").catch(function(error) {
+    console.log(error);
   });
-// // from data.js
-// var tableData = data;
+  // Print the pokeData
+  console.log(pokeData);
 
-// // Select the button
-// var button = d3.select("button");
+  // Select the button
+  var button = d3.select("button");
 
-// // Select the form
-// var form = d3.select("#form-control");
+  // Select the form
+  var form = d3.select("#form-control");
 
-// // Select the table body
-// var tableBody = d3.select("tbody")
+  // Select the table body
+  var tableBody = d3.select("tbody")
 
-// // Create event handlers 
-// button.on("click", eventHandler);
-// form.on("submit", eventHandler);
+  // Create event handlers 
+  button.on("click", eventHandler);
+  form.on("submit", eventHandler);
 
-// // Complete the event handler function for the form
-// function eventHandler() {
+  // Complete the event handler function for the form
+  function eventHandler() {
 
-//   // Prevent refreshing
-//   d3.event.preventDefault();
+    // Prevent refreshing
+    d3.event.preventDefault();
 
-//   // Select rows and clear table
-//   tableBody.selectAll("tr").remove()
+    // Select rows and clear table
+    tableBody.selectAll("tr").remove()
 
-//   // Select HTML of input element 
-//   var userDate = d3.select(".date-field");
-//   var userCity = d3.select(".city-field");
-//   var userState = d3.select(".state-field");
-//   var userCountry = d3.select(".country-field");
-//   var userShape = d3.select(".shape-field");
-
-
-//   // Get value property of inputElement
-//   var inputDate = userDate.property("value");
-//   var inputCity = userCity.property("value");
-//   var inputState = userState.property("value");
-//   var inputCountry = userCountry.property("value");
-//   var inputShape = userShape.property("value");
+    // Select HTML of input element 
+    var userNo = d3.select(".no-field");
+    var userName = d3.select(".name-field");
+    var userGen = d3.select(".gen-field");
+    var userType1 = d3.select(".type1-field");
+    var userType2 = d3.select(".type2-field");
+    var userAbility = d3.select(".ability-field");
 
 
-//   // Use the form input to filter the data by input fields
-//   var sightings = tableData
-  
-//   if (datetime) {
-//     sightings = sightings.filter(sighting => sighting.datetime === inputDate);
-//   }
-//   if (inputCity) {
-//     sightings = sightings.filter(sighting => sighting.city === inputCity);
-//   }
-//   if (inputState) {
-//     sightings = sightings.filter(sighting => sighting.state === inputState);
-//   }
-//   if (inputCountry) {
-//     sightings = sightings.filter(sighting => sighting.country === inputCountry);
-//   }
-//   if (inputShape) {
-//     sightings = sightings.filter(sighting => sighting.shape === inputShape);
-//   }
+    // Get value property of inputElement
+    var inputNo = userNo.property("value");
+    var inputName = userName.property("value");
+    var inputGen = userGen.property("value");
+    var inputType1 = userType1.property("value");
+    var inputType2 = userType2.property("value");
+    var inputAbility = userAbility.property("value");
 
-//   // Create arrays for each column
-//   var datetime = sightings.map(sighting => sighting.datetime);
-//   var city = sightings.map(sighting => sighting.city);
-//   var state = sightings.map(sighting => sighting.state);
-//   var country = sightings.map(sighting => sighting.country);
-//   var shape = sightings.map(sighting => sighting.shape);
-//   var durationMinutes = sightings.map(sighting => sighting.durationMinutes);
-//   var comments = sightings.map(sighting => sighting.comments);
 
-//   // Use a for loop to append new rows to table and populate with filtered data
-//   for (var sighting = 0; sighting < sightings.length; sighting++) {
-//     var newRow = tableBody.append("tr");
-//     newRow.append("td").text(datetime[sighting]);
-//     newRow.append("td").text(city[sighting]);
-//     newRow.append("td").text(state[sighting]);
-//     newRow.append("td").text(country[sighting]);
-//     newRow.append("td").text(shape[sighting]);
-//     newRow.append("td").text(durationMinutes[sighting]);
-//     newRow.append("td").text(comments[sighting]);
-//   }
+    // Use the form input to filter the data by input fields
+    var stats = pokeData
+    
+    if (inputNo) {
+      stats = stats.filter(stats => stats.pokedex_number === inputNo);
+    }
+    if (inputName) {
+      stats = stats.filter(stats => stats.name === inputName);
+    }
+    if (inputGen) {
+      stats = stats.filter(stats => stats.generation === inputGen);
+    }
+    if (inputType1) {
+      stats = stats.filter(stats => stats.type_1 === inputType1);
+    }
+    if (inputType2) {
+      stats = stats.filter(stats => stats.type_2 === inputType2);
+    }
+    if (inputAbility) {
+      stats = stats.filter(stats => stats.ability_1 === inputAbility);
+    }
 
-// };
+    // Create arrays for each column
+    var pokeNo = stats.map(stats => stats.pokedex_number);
+    var pokeName = stats.map(stats => stats.name);
+    var generation = stats.map(stats => stats.generation);
+    var type1 = stats.map(stats => stats.type_1);
+    var type2 = stats.map(stats => stats.type_2);
+    var height = stats.map(stats => stats.height_m);
+    var weight = stats.map(stats => stats.weight_kg);
+    var ability1 = stats.map(stats => stats.ability_1);
+    var ability2 = stats.map(stats => stats.ability_2);
+    var abilityHidden = stats.map(stats => stats.ability_hidden);
+    var totalPoints = stats.map(stats => stats.total_points);
+    var hp = stats.map(stats => stats.hp);
+    var attack = stats.map(stats => stats.attack);
+    var defense = stats.map(stats => stats.defense);
+    var spAttack = stats.map(stats => stats.sp_attack);
+    var spDefense = stats.map(stats => stats.sp_defense);
+    var speed = stats.map(stats => stats.speed);
+    var catchRate = stats.map(stats => stats.catch_rate);
+    var baseFriendship = stats.map(stats => stats.base_friendship);
+    var baseEp = stats.map(stats => stats.base_experience);
+
+    // Use a for loop to append new rows to table and populate with filtered data
+    for (var stat = 0; stat < stats.length; stat++) {
+      var newRow = tableBody.append("tr");
+      newRow.append("td").text(pokeNo[stat]);
+      newRow.append("td").text(pokeName[stat]);
+      newRow.append("td").text(generation[stat]);
+      newRow.append("td").text(type1[stat]);
+      newRow.append("td").text(type2[stat]);
+      newRow.append("td").text(height[stat]);
+      newRow.append("td").text(weight[stat]);
+      newRow.append("td").text(ability1[stat]);
+      newRow.append("td").text(ability2[stat]);
+      newRow.append("td").text(abilityHidden[stat]);
+      newRow.append("td").text(totalPoints[stat]);
+      newRow.append("td").text(hp[stat]);
+      newRow.append("td").text(attack[stat]);
+      newRow.append("td").text(defense[stat]);
+      newRow.append("td").text(spAttack[stat]);
+      newRow.append("td").text(spDefense[stat]);
+      newRow.append("td").text(speed[stat]);
+      newRow.append("td").text(catchRate[stat]);
+      newRow.append("td").text(baseFriendship[stat]);
+      newRow.append("td").text(baseEp[stat]);
+
+    }
+  }
+
+
+})()
+
+
+
 
 
 // function buildPlot(stat1, stat2) {
@@ -174,5 +213,3 @@ d3.csv("../Resources/pokedex_(Update.04.20).csv").then(function(data) {
 //     buildPlot(userStat1, userStat2);
  
 // };
-
-
