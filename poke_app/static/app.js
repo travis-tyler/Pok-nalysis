@@ -1,6 +1,6 @@
 // Load data from hours-of-tv-watched.csv
 (async function(){
-  var pokeData = await d3.csv("Resources/pokedex_(Update.04.20).csv").catch(function(error) {
+  var pokeData = await d3.csv("../../Resources/pokedex_(Update.04.20).csv").catch(function(error) {
     console.log(error);
   });
   // Print the pokeData
