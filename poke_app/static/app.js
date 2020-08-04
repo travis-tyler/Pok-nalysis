@@ -1,6 +1,6 @@
 // Load data from pokedex csv
 (async function(){
-  var pokeData = await d3.csv("poke_app/static/pokedex_(Update.04.20).csv").catch(function(error) {
+  var pokeData = await d3.csv("../static/pokedex_(Update.04.20).csv").catch(function(error) {
     console.log(error);
   });
   // Print the pokeData
