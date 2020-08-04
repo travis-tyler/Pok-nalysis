@@ -107,12 +107,12 @@
       newRow.append("td").text(hp[stat]);
       newRow.append("td").text(attack[stat]);
       newRow.append("td").text(defense[stat]);
-      newRow.append("td").text(spAttack[stat]);
-      newRow.append("td").text(spDefense[stat]);
+      // newRow.append("td").text(spAttack[stat]);
+      // newRow.append("td").text(spDefense[stat]);
       newRow.append("td").text(speed[stat]);
       newRow.append("td").text(catchRate[stat]);
-      newRow.append("td").text(baseFriendship[stat]);
-      newRow.append("td").text(baseEp[stat]);
+      // newRow.append("td").text(baseFriendship[stat]);
+      // newRow.append("td").text(baseEp[stat]);
 
     }
   }
