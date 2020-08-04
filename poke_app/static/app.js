@@ -33,7 +33,7 @@
     var userName = d3.select(".name-field");
     var userGen = d3.select(".gen-field");
     var userType1 = d3.select(".type1-field");
-    var userType2 = d3.select(".type2-field");
+    // var userType2 = d3.select(".type2-field");
     var userAbility = d3.select(".ability-field");
 
 
@@ -42,7 +42,7 @@
     var inputName = userName.property("value");
     var inputGen = userGen.property("value");
     var inputType1 = userType1.property("value");
-    var inputType2 = userType2.property("value");
+    // var inputType2 = userType2.property("value");
     var inputAbility = userAbility.property("value");
 
 
@@ -61,9 +61,9 @@
     if (inputType1) {
       stats = stats.filter(stats => stats.type_1 === inputType1);
     }
-    if (inputType2) {
-      stats = stats.filter(stats => stats.type_2 === inputType2);
-    }
+    // if (inputType2) {
+    //   stats = stats.filter(stats => stats.type_2 === inputType2);
+    // }
     if (inputAbility) {
       stats = stats.filter(stats => stats.ability_1 === inputAbility);
     }
@@ -83,12 +83,12 @@
     var hp = stats.map(stats => stats.hp);
     var attack = stats.map(stats => stats.attack);
     var defense = stats.map(stats => stats.defense);
-    // var spAttack = stats.map(stats => stats.sp_attack);
-    // var spDefense = stats.map(stats => stats.sp_defense);
+    var spAttack = stats.map(stats => stats.sp_attack);
+    var spDefense = stats.map(stats => stats.sp_defense);
     var speed = stats.map(stats => stats.speed);
     var catchRate = stats.map(stats => stats.catch_rate);
-    // var baseFriendship = stats.map(stats => stats.base_friendship);
-    // var baseEp = stats.map(stats => stats.base_experience);
+    var baseFriendship = stats.map(stats => stats.base_friendship);
+    var baseEp = stats.map(stats => stats.base_experience);
 
     // Use a for loop to append new rows to table and populate with filtered data
     for (var stat = 0; stat < stats.length; stat++) {
