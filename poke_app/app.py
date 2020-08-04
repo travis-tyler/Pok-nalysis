@@ -24,7 +24,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Read in csv data
-scatter_df = pd.DataFrame(pd.read_csv('Resources/scatter_pokedex.csv'))
+scatter_df = pd.DataFrame(pd.read_csv('poke_app/static/scatter_pokedex.csv'))
 scatter_df = scatter_df.dropna(how='any')
 
 # Create dropdown menu from column names
